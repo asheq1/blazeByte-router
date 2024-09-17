@@ -1,8 +1,14 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useNavigation } from "react-router-dom";
 import BlogCard from "./BlogCard";
+import Loader from "../components/Loader";
 
 const Blogs = () => {
     const blogs = useLoaderData();
+    
+    // spinner 
+    const navigation = useNavigation();
+    if(navigation.state === 'loading') return <Loader />
+
 
     return (
         <section className="dark:bg-gray-100 py-6 dark:text-gray-800">
@@ -18,7 +24,7 @@ const Blogs = () => {
                 </Link>
                 <div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
                     {
-                        blogs.map(blog => <BlogCard 
+                        blogs.slice(1, 19).map(blog => <BlogCard 
                             blog={blog} key={blog.id}/>)
                     }
                 </div>
