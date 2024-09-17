@@ -20,7 +20,7 @@ const Nav = () => {
 
 
     return (
-        <div className="navbar bg-base-100 shadow-lg fixed px-4 z-index">
+        <div className="navbar bg-base-100 shadow-lg fixed sm:px-8 px-4 z-index">
             <div className="flex-1">
                 <Link to="/" className="btn btn-ghost text-2xl normal-case gap-0 text-secondary">Blaze<span className="text-primary">Byte</span></Link>
                 <a ></a>
