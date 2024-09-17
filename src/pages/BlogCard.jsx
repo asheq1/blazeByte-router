@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import placeholderImage from "../assets/404.jpg"
 import { MdDeleteForever } from "react-icons/md";
-
+import PropTypes from 'prop-types';
 
 const BlogCard = ({blog, deletable, handleDelete}) => {
     const {cover_image, title, description, published_at, id} = blog;
@@ -35,5 +35,11 @@ const BlogCard = ({blog, deletable, handleDelete}) => {
         </div>
     );
 };
+
+BlogCard.propTypes = {
+    blog: PropTypes.object.isRequired,
+    deletable: PropTypes.bool.isRequired,
+    handleDelete: PropTypes.func.isRequired
+}
 
 export default BlogCard;

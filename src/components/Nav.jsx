@@ -20,26 +20,26 @@ const Nav = () => {
 
 
     return (
-        <div className="navbar bg-base-100 shadow-lg fixed sm:px-8 px-4 z-index">
+        <div className="navbar bg-base-100 shadow-lg fixed w-full top-0 sm:px-8 px-4 z-10">
             <div className="flex-1">
                 <Link to="/" className="btn btn-ghost text-2xl normal-case gap-0 text-secondary">Blaze<span className="text-primary">Byte</span></Link>
-                <a ></a>
             </div>
             <div className="flex-none gap-2">
                 <ul className="menu menu-horizontal px-1 hidden sm:flex gap-5">
-                    <NavLink to="/" className={({isActive}) => 
-                        isActive ? 'text-primary font-bold': 'font-bold'}>Home</NavLink>
-                    <NavLink to="/blogs" className={({isActive}) => 
-                        isActive ? 'text-primary font-bold': 'font-bold'}>Blogs</NavLink>
-                    <NavLink to="/bookmarks" className={({isActive}) => 
-                        isActive ? 'text-primary font-bold': 'font-bold'}>Bookmarks</NavLink>
+                    <NavLink to="/" className={({ isActive }) => 
+                        isActive ? 'text-primary font-bold' : 'font-bold'}>Home</NavLink>
+                    <NavLink to="/blogs" className={({ isActive }) => 
+                        isActive ? 'text-primary font-bold' : 'font-bold'}>Blogs</NavLink>
+                    <NavLink to="/bookmarks" className={({ isActive }) => 
+                        isActive ? 'text-primary font-bold' : 'font-bold'}>Bookmarks</NavLink>
                 </ul>
                 <label className="grid cursor-pointer place-items-center">
                     <input
                         onChange={handleToggle}
                         type="checkbox"
                         checked={theme === 'synthwave'}
-                        className="toggle theme-controller bg-base-content col-span-2 col-start-1 row-start-1" />
+                        className="toggle theme-controller bg-base-content col-span-2 col-start-1 row-start-1"
+                    />
                     <svg
                         className="stroke-base-100 fill-base-100 col-start-1 row-start-1"
                         xmlns="http://www.w3.org/2000/svg"

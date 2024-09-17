@@ -13,8 +13,9 @@ const Blogs = () => {
     return (
         <section className="dark:bg-gray-100 py-6 dark:text-gray-800">
             <div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">
-                <Link rel="noopener noreferrer" 
-                    to="/" className="block max-w-sm gap-3 mx-auto sm:max-w-full group hover:no-underline focus:no-underline lg:grid lg:grid-cols-12 dark:bg-gray-50">
+                <Link 
+                    to={`/blog/${blogs[0].id}`} 
+                    className="block max-w-sm gap-3 mx-auto sm:max-w-full group hover:no-underline focus:no-underline lg:grid lg:grid-cols-12 dark:bg-gray-50">
                     <img src={blogs[0].cover_image} 
                         alt="Cover" 
                         className="w-full h-auto lg:col-span-7 object-cover"/>

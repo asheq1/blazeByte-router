@@ -1,5 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 
+
 const Author = () => {
     const author = useLoaderData()
     const {
@@ -13,7 +14,7 @@ const Author = () => {
 
     return (
         <div className="flex flex-col justify-center p-6 shadow-md rounded-xl sm:px-12 dark:bg-gray-50 dark:text-gray-800">
-	        <img src={ profile_image} alt="" className="w-32 h-32 mx-auto rounded-full dark:bg-gray-500 aspect-square" />
+	<img src={ profile_image} alt="" className="w-32 h-32 mx-auto rounded-full dark:bg-gray-500 aspect-square" />
             <div className="space-y-4 text-center divide-y dark:divide-gray-300">
                 <div className="my-2 space-y-1">
                     <h2 className="text-xl font-semibold sm:text-2xl">{name}</h2>
