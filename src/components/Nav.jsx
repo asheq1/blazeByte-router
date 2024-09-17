@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 
 const Nav = () => {
-    const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'light');
+    const [theme, setTheme] = useState(() => 
+        localStorage.getItem('theme') || 'light');
 
     useEffect(()=>{
         localStorage.setItem('theme', theme)
         document.querySelector('html').setAttribute('data-theme', theme)
-    },[theme])
+    }, [theme])
 
     const handleToggle = (e) => {
         if(e.target.checked){
@@ -16,18 +18,21 @@ const Nav = () => {
         }
     }
 
-    console.log(theme)
 
     return (
         <div className="navbar bg-base-100 shadow-lg fixed px-4 z-index">
             <div className="flex-1">
-                <a className="btn btn-ghost text-2xl normal-case gap-0 text-secondary">Blaze<span className="text-primary">Byte</span></a>
+                <Link to="/" className="btn btn-ghost text-2xl normal-case gap-0 text-secondary">Blaze<span className="text-primary">Byte</span></Link>
+                <a ></a>
             </div>
-            <div className="flex-none">
-                <ul className="menu menu-horizontal px-1">
-                    <li className="font-bold"><a>Home</a></li>
-                    <li className="font-bold text-primary"><a>Blogs</a></li>
-                    <li className="font-bold"><a>Bookmarks</a></li>
+            <div className="flex-none gap-2">
+                <ul className="menu menu-horizontal px-1 hidden sm:flex gap-5">
+                    <NavLink to="/" className={({isActive}) => 
+                        isActive ? 'text-primary font-bold': 'font-bold'}>Home</NavLink>
+                    <NavLink to="/blogs" className={({isActive}) => 
+                        isActive ? 'text-primary font-bold': 'font-bold'}>Blogs</NavLink>
+                    <NavLink to="/bookmarks" className={({isActive}) => 
+                        isActive ? 'text-primary font-bold': 'font-bold'}>Bookmarks</NavLink>
                 </ul>
                 <label className="grid cursor-pointer place-items-center">
                     <input
